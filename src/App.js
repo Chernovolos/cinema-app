@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store";
-import './index.scss';
+import "./assets/myStyle/index.scss";
+import "react-bootstrap";
 import Layout from "./component/Layout";
 
 function App() {
