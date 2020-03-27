@@ -1,5 +1,5 @@
 import React from "react";
-import "../assets/myStyle/header.scss";
+
 class Header extends React.Component {
     constructor(props) {
         super(props);
