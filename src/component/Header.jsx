@@ -1,4 +1,6 @@
 import React from "react";
+import {Link} from "react-router-dom";
+
 
 class Header extends React.Component {
     constructor(props) {
@@ -23,29 +25,29 @@ class Header extends React.Component {
                 <div className="container">
                     <header className="header">
                         <div>
-                            <a href="#" className="logo">Logo</a>
+                            <Link to="/" className="logo">Logo</Link>
                         </div>
                         <nav className="nav">
                             <ul className="nav-list">
                                 <li>
-                                    <a href="#" data-name="Home"
+                                    <Link to="/" data-name="Home"
                                         onClick={this.createActiveLink}
                                        className={`nav-item ${this.state.activeLink === "Home"? "is-active": ""}`}>Home
                                         <span/>
                                         <span/>
                                         <span/>
                                         <span/>
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
-                                    <a href="#" data-name="Movie Schedule"
+                                    <Link to="/" data-name="Movie Schedule"
                                        onClick={this.createActiveLink}
                                        className={`nav-item ${this.state.activeLink === "Movie Schedule"? "is-active": ""}`}>Movie Schedule
                                         <span/>
                                         <span/>
                                         <span/>
                                         <span/>
-                                    </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </nav>

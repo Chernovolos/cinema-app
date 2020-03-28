@@ -16,7 +16,7 @@
   & .nav-item {
     position: relative;
     display: block;
-    color: #00FFFF;
+    color: black;
     font-size: 15px;
     text-align: center;
     text-decoration: none;
@@ -27,14 +27,14 @@
   }
 
   .is-active {
-    border: 1px solid #00FFFF;
+    border: 1px solid black;
   }
 
   & span {
     position: absolute;
     width: 25%;
     height: 100%;
-    background-color: #00FFFF;
+    background-color: black;
     z-index: -1;
     transform-origin: top;
     transform: scaleY(0);
