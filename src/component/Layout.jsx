@@ -4,10 +4,6 @@ import MainPage from "./MainPage";
 import Header from "./Header";
 
 class Layout extends React.Component {
-    constructor(props) {
-        super(props);
-
-    }
 
     render() {
         return (

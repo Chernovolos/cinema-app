@@ -1,15 +1,15 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 
 class MainPage extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return(
-            <div/>
+            <div>
+                <Button variant={"outline-success"}>OKAY</Button>
+            </div>
         );
     }
-};
+}
 
 export default MainPage;
