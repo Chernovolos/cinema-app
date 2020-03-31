@@ -1,6 +1,12 @@
+.header-container {
+  background-color: #1d1e22;
+}
+
 .header {
+  position: sticky;
   display: flex;
   justify-content: space-between;
+  padding: 20px 0;
 
   .logo {
       color: black;
@@ -11,7 +17,4 @@
     }
 }
 
-.container {
-  width: 800px;
-  margin: 0 auto;
-}
+

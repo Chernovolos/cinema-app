@@ -11,6 +11,7 @@ class Layout extends React.Component {
                 <Header/>
                 <Switch>
                     <Route exact path="/" component={MainPage}/>
+                    {/*<Route path="/films/:id" component={FilmPage}/>*/}
                 </Switch>
             </>
         );
