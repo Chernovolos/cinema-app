@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store";
-import "./assets/myStyle/index.scss";
+import "./assets/scss/index.scss";
 
 import Layout from "./component/Layout";
 

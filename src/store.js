@@ -1,4 +1,9 @@
-import { createStore } from "redux";
-import mainPageReducers from "./reducers/mainPageReducer"
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import rootReducer from "./reducers";
 
-export const store = createStore(mainPageReducers);
+
+export const store = createStore(
+    rootReducer,
+    applyMiddleware(thunk)
+);
