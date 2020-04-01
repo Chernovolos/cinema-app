@@ -5,7 +5,7 @@ const initialState = {
     preloader: false,
     error: null,
     genres: [
-        "Приключения", "Фантастика", "Триллер", "Семейный", "Комедиа","Фэнтэзи",
+        "Приключения", "Фантастика", "Триллер", "Семейный", "Комедиа","Фэнтези",
         "Анимация", "Боевик", "Экшн", "Романтика", "Ужасы", "Криминал", "Мелодрама"
      ],
     shownFilms: [],
@@ -50,7 +50,7 @@ export default (state = initialState, action) => {
                 if (film.title.toUpperCase().indexOf(payload.search.toUpperCase()) >= 0) {
                     nameGood = true;
                 }
-                if (payload.genre.length === 0 || film.genre.filter(genre => genre.toUpperCase() === payload.genre.toUpperCase()).length > 0) {
+                if (payload.genre.length === 0 || film.genres.filter(genre => genre.toUpperCase().trim() === payload.genre.toUpperCase()).length > 0) {
                     genreGood = true;
                 }
                 return nameGood && genreGood;
