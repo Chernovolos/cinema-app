@@ -5,7 +5,7 @@ const initialState = {
     preloader: false,
     error: null,
     genres: [
-        "Приключения", "Фантастика", "Триллер", "Семейный", "Комедиа","Фэнтэзи",
+        "Приключения", "Фантастика", "Триллер", "Семейный", "Комедиа","Фэнтези",
         "Анимация", "Боевик", "Экшн", "Романтика", "Ужасы", "Криминал", "Мелодрама"
      ],
     shownFilms: [],
@@ -24,11 +24,12 @@ export default (state = initialState, action) => {
 
         case ACTION.GET_CURRENT_FILMS_SUCCESS:
             console.log('%c FILMS FROM SERVER', 'font-size: 18px; color: green',payload);
+            let shownFilms = filterFilms(payload.films, {genre: payload.genre, search: payload.search});
             return {
                 ...state,
                 preloader: false,
-                films: payload,
-                shownFilms: payload,
+                films: payload.films,
+                shownFilms,
                 error: null
             };
 
@@ -43,18 +44,7 @@ export default (state = initialState, action) => {
             };
 
         case ACTION.FILTER_CURRENT_FILMS:
-            let newShownFilms = state.films.filter((film) => {
-                let nameGood = false;
-                let genreGood = false;
-
-                if (film.title.toUpperCase().indexOf(payload.search.toUpperCase()) >= 0) {
-                    nameGood = true;
-                }
-                if (payload.genre.length === 0 || film.genre.filter(genre => genre.toUpperCase() === payload.genre.toUpperCase()).length > 0) {
-                    genreGood = true;
-                }
-                return nameGood && genreGood;
-            });
+            let newShownFilms = filterFilms(state.films, payload);
             return {
                 ...state,
                 shownFilms: newShownFilms
@@ -62,4 +52,22 @@ export default (state = initialState, action) => {
 
         default: return state;
     }
+}
+
+function filterFilms (films, filter) {
+    console.log(films);
+    let filteredFilms = films.filter((film) => {
+        let nameGood = false;
+        let genreGood = false;
+
+        if (film.title.toUpperCase().indexOf(filter.search.toUpperCase()) >= 0) {
+            nameGood = true;
+        }
+        if (filter.genre.length === 0 || film.genres.filter(genre => genre.toUpperCase().trim() === filter.genre.toUpperCase()).length > 0) {
+            genreGood = true;
+        }
+        return nameGood && genreGood;
+    });
+
+    return filteredFilms;
 }

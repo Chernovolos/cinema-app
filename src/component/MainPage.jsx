@@ -1,11 +1,11 @@
 import React from "react";
-import { getCurrentFilms, filterFilms } from "../actions/filmActions";
+import { getCurrentFilms, filterFilms , setFilm} from "../actions/filmActions";
 import FilmCard from "./FilmCard";
 import { connect } from "react-redux";
 import { Col, Row, FormControl, InputGroup, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
-
+import Preloader from "./Preloader";
 
 
 class MainPage extends React.Component {
@@ -16,7 +16,11 @@ class MainPage extends React.Component {
     };
 
     componentDidMount() {
-        this.props.initialize();
+        // query params
+        let queryParams = new URLSearchParams(this.props.location.search);
+        let genre = queryParams.get("genre") || "";
+        let search = queryParams.get("search") || "";
+        this.setState({...this.state, genre, search}, () => this.props.initialize(this.state.search, this.state.genre));
     }
 
     handleGenreChange = (event) => {
@@ -24,23 +28,45 @@ class MainPage extends React.Component {
         this.setState({...this.state, genre: event.target.value});
     };
 
-    handleSearchChange =(event) => {
+    handleSearchChange = (event) => {
         this.setState({...this.state, search: event.target.value});
     };
 
     handleSearch = () => {
+        let queryParams = {};
+        if (this.state.search.length) {
+            queryParams.search = this.state.search;
+        }
+        if (this.state.genre.length) {
+            queryParams.genre = this.state.genre;
+        }
+        this.props.history.push({
+            pathname: this.props.location.pathname,
+            search: new URLSearchParams(queryParams).toString()
+        });
         this.props.filterFilms({genre: this.state.genre, search: this.state.search});
     };
 
+    handleFilmClick = (film) => {
+        console.log(film);
+        this.props.setFilm(film);
+        this.props.history.push({pathname: `/films/${film.id}`});
+    };
+
+    handleGenreClick = (genre) => {
+        this.setState({...this.state, genre, search: ""}, this.handleSearch);
+    };
+
     render() {
-        let {error, genres, films} = this.props;
+        let {error, genres, films, preloader} = this.props;
+        let {genre, search} = this.state;
         return(
             <div className="container">
                 <section className="section">
                     <Row>
                         <Col>
                             <InputGroup className="mb-3">
-                                <FormControl as="select" onChange={this.handleGenreChange}>
+                                <FormControl as="select" value={genre} onChange={this.handleGenreChange}>
                                     <option key={-1} value="">Выберите жанр</option>
                                     {
                                         genres.map((genre, i) => {
@@ -48,7 +74,7 @@ class MainPage extends React.Component {
                                         })
                                     }
                                 </FormControl>
-                                <FormControl placeholder="Введите название фильма" onChange={this.handleSearchChange}/>
+                                <FormControl placeholder="Введите название фильма" value={search} onChange={this.handleSearchChange}/>
                                 <InputGroup.Append>
                                     <Button onClick={this.handleSearch}>
                                         <FontAwesomeIcon icon={faSearch}/>
@@ -56,17 +82,18 @@ class MainPage extends React.Component {
                                 </InputGroup.Append>
                             </InputGroup>
                         </Col>
-                        {/*<Col>*/}
-                        {/*    <FontAwesomeIcon icon={faSearch}/>*/}
-                        {/*</Col>*/}
                     </Row>
                 </section>
                 <section className="section">
                     <div className="row">
-                        <h1 color="red">{error}</h1>
+                        <h1 className="text-danger">{error}</h1>
+                        <Preloader show={preloader}/>
                         {
                             films.map(film => {
-                                return <FilmCard key={film._id} {...film}/>
+                                return <FilmCard key={film.id}
+                                                 {...film}
+                                                 onFilmClick={() => this.handleFilmClick(film)}
+                                                 onGenreClick={this.handleGenreClick}/>
                             })
                         }
                     </div>
@@ -84,7 +111,8 @@ export default connect(
         genres: state.mainPage.genres
     }),
     (dispatch) => ({
-        initialize: () => dispatch(getCurrentFilms()),
-        filterFilms: (filter) => dispatch(filterFilms(filter))
+        initialize: (search, genre) => dispatch(getCurrentFilms(search, genre)),
+        filterFilms: (filter) => dispatch(filterFilms(filter)),
+        setFilm: (film) => dispatch(setFilm(film))
     })
 )(MainPage);
