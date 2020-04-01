@@ -16,7 +16,11 @@ class MainPage extends React.Component {
     };
 
     componentDidMount() {
-        this.props.initialize();
+        // query params
+        let queryParams = new URLSearchParams(this.props.location.search);
+        let genre = queryParams.get("genre") || "";
+        let search = queryParams.get("search") || "";
+        this.setState({...this.state, genre, search}, () => this.props.initialize(this.state.search, this.state.genre));
     }
 
     handleGenreChange = (event) => {
@@ -29,6 +33,17 @@ class MainPage extends React.Component {
     };
 
     handleSearch = () => {
+        let queryParams = {};
+        if (this.state.search.length) {
+            queryParams.search = this.state.search;
+        }
+        if (this.state.genre.length) {
+            queryParams.genre = this.state.genre;
+        }
+        this.props.history.push({
+            pathname: this.props.location.pathname,
+            search: new URLSearchParams(queryParams).toString()
+        });
         this.props.filterFilms({genre: this.state.genre, search: this.state.search});
     };
 
@@ -44,7 +59,7 @@ class MainPage extends React.Component {
 
     render() {
         let {error, genres, films, preloader} = this.props;
-        let {genre} = this.state;
+        let {genre, search} = this.state;
         return(
             <div className="container">
                 <section className="section">
@@ -59,7 +74,7 @@ class MainPage extends React.Component {
                                         })
                                     }
                                 </FormControl>
-                                <FormControl placeholder="Введите название фильма" onChange={this.handleSearchChange}/>
+                                <FormControl placeholder="Введите название фильма" value={search} onChange={this.handleSearchChange}/>
                                 <InputGroup.Append>
                                     <Button onClick={this.handleSearch}>
                                         <FontAwesomeIcon icon={faSearch}/>
@@ -96,7 +111,7 @@ export default connect(
         genres: state.mainPage.genres
     }),
     (dispatch) => ({
-        initialize: () => dispatch(getCurrentFilms()),
+        initialize: (search, genre) => dispatch(getCurrentFilms(search, genre)),
         filterFilms: (filter) => dispatch(filterFilms(filter)),
         setFilm: (film) => dispatch(setFilm(film))
     })
