@@ -1,0 +1,46 @@
+.film-page-title {
+  color: #feda6a;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.film-page-subtitle {
+  color: #feda6a;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.film-page-description {
+  color: #f8f9fa;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.film-page-img {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  img {
+    width: auto;
+    height: 400px;
+  }
+}
+
+.film-page-video {
+  overflow:hidden;
+  position:relative;
+  padding-bottom:56.25%;
+  padding-top:30px;
+  height:0;
+
+   & iframe {
+      position:absolute;
+      width:100%;
+      height:100%;
+      left:0;
+      top:0;
+    }
+}
