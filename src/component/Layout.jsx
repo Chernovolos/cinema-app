@@ -3,6 +3,7 @@ import {Switch, Route} from "react-router";
 import MainPage from "./MainPage";
 import Header from "./Header";
 import FilmPage from "./FilmPage";
+import TicketPage from "./TicketPage";
 
 class Layout extends React.Component {
 
@@ -13,6 +14,7 @@ class Layout extends React.Component {
                 <Switch>
                     <Route exact path="/" component={MainPage}/>
                     <Route path="/films/:id" component={FilmPage}/>
+                    <Route path="/buy-tickets" component={TicketPage}/>
                 </Switch>
             </>
         );
