@@ -1,5 +1,5 @@
 import React from 'react';
-import fallbackImage from "../assets/images/fallback-film-poster.jpg";
+import staticFallbackImage from "../assets/images/fallback-film-poster.jpg";
 
 export default class Image extends React.Component {
 
@@ -15,7 +15,7 @@ export default class Image extends React.Component {
     onError = () => {
         if (!this.state.errored) {
             this.setState({
-                src: this.props.fallbackSrc || fallbackImage,
+                src: this.props.fallbackSrc || staticFallbackImage,
                 errored: true,
             });
         }
@@ -25,14 +25,13 @@ export default class Image extends React.Component {
         const { src } = this.state;
         const {
             src: _1,
-            fallbackSrc: _2 = fallbackImage,
-            ...props
+            fallbackSrc: _2,
+            ...rest
         } = this.props;
-
         return (
             <img src={src}
                  onError={this.onError}
-                 {...props}
+                 {...rest}
             />
         );
     }
