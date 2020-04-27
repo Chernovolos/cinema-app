@@ -7,7 +7,7 @@ const initialState = {
     genres: [
         "Приключения", "Фантастика", "Триллер", "Семейный", "Комедиа","Фэнтези",
         "Анимация", "Боевик", "Экшн", "Романтика", "Ужасы", "Криминал", "Мелодрама"
-     ],
+    ],
     shownFilms: [],
 };
 
@@ -15,15 +15,8 @@ export default (state = initialState, action) => {
     let {type, payload} = action;
 
     switch (type) {
-        case ACTION.GET_CURRENT_FILMS_START:
-            console.log("GET_CURRENT_FILMS_START");
-            return {
-                ...state,
-                preloader: true
-            };
-
         case ACTION.GET_CURRENT_FILMS_SUCCESS:
-            console.log('%c FILMS FROM SERVER', 'font-size: 18px; color: green',payload);
+            console.log('%c FILMS FROM SERVER', 'font-size: 18px; color: green', payload);
             let shownFilms = filterFilms(payload.films, {genre: payload.genre, search: payload.search});
             return {
                 ...state,
@@ -55,8 +48,7 @@ export default (state = initialState, action) => {
 }
 
 function filterFilms (films, filter) {
-    console.log(films);
-    let filteredFilms = films.filter((film) => {
+    return films.filter((film) => {
         let nameGood = false;
         let genreGood = false;
 
@@ -68,6 +60,4 @@ function filterFilms (films, filter) {
         }
         return nameGood && genreGood;
     });
-
-    return filteredFilms;
 }
