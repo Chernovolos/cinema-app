@@ -5,7 +5,7 @@ import sortBy from "lodash/sortBy";
 export default class ModalTicket extends React.Component {
 
     render() {
-        let { show, onClose, serverAnswer } = this.props;
+        let { show, onClose, serverAnswer} = this.props;
 
         if (show) {
             let totalCost = 0;
@@ -59,7 +59,7 @@ export default class ModalTicket extends React.Component {
                                     <span className="ticket-modal-info-subtitle"> #{serverAnswer.orderNumber}</span>
                                 </p>
                                 <div className="ticket-modal-container-button">
-                                    <Button onClick={onClose} className="my-btn ticket-modal-button">close</Button>
+                                    <Button onClick={onClose} className="my-btn ticket-modal-button">закрыть</Button>
                                 </div>
                             </div>
                         </div>

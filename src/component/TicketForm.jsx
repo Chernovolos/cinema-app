@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { withFormik } from 'formik';
 
 const TicketForm = ({handleSubmit, handleChange, values, errors, touched, handleBlur, isValid, isBtnDisabled}) => {

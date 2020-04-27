@@ -1,10 +1,10 @@
 import React from "react";
-import { getCurrentFilms, filterFilms , setFilm} from "../actions/filmActions";
-import FilmCard from "./FilmCard";
 import { connect } from "react-redux";
-import { Col, Row, FormControl, InputGroup, Button } from "react-bootstrap";
+import { filterFilms , setFilm} from "../actions/filmActions";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import {Col, Row, FormControl, InputGroup, Button} from "react-bootstrap";
+import FilmCard from "./FilmCard";
 import Preloader from "./Preloader";
 
 
@@ -20,7 +20,7 @@ class MainPage extends React.Component {
         let queryParams = new URLSearchParams(this.props.location.search);
         let genre = queryParams.get("genre") || "";
         let search = queryParams.get("search") || "";
-        this.setState({...this.state, genre, search}, () => this.props.initialize(this.state.search, this.state.genre));
+        this.setState({...this.state, genre, search}, () => this.props.filterFilms({genre: this.state.genre, search: this.state.search}));
     }
 
     handleGenreChange = (event) => {
@@ -48,7 +48,6 @@ class MainPage extends React.Component {
     };
 
     handleFilmClick = (film) => {
-        console.log(film);
         this.props.setFilm(film);
         this.props.history.push({pathname: `/films/${film.id}`});
     };
@@ -65,18 +64,18 @@ class MainPage extends React.Component {
                 <section className="section">
                     <Row>
                         <Col>
-                            <InputGroup className="mb-3">
-                                <FormControl as="select" value={genre} onChange={this.handleGenreChange}>
-                                    <option key={-1} value="">Выберите жанр</option>
+                            <InputGroup sm={3}>
+                                <FormControl className="main-search-input-group bg-transparent outline-secondary"  as="select" value={genre} onChange={this.handleGenreChange}>
+                                    <option key={-1} value=""  className="main-search-options">Выберите жанр</option>
                                     {
                                         genres.map((genre, i) => {
-                                            return <option key={i} value={genre}>{genre}</option>
+                                            return <option key={i} value={genre}  className="main-search-options">{genre}</option>
                                         })
                                     }
                                 </FormControl>
-                                <FormControl placeholder="Введите название фильма" value={search} onChange={this.handleSearchChange}/>
+                                <FormControl  className="main-search-input-group bg-transparent outline-secondary" placeholder="Введите название фильма" value={search} onChange={this.handleSearchChange}/>
                                 <InputGroup.Append>
-                                    <Button onClick={this.handleSearch}>
+                                    <Button onClick={this.handleSearch} variant={"secondary"}>
                                         <FontAwesomeIcon icon={faSearch}/>
                                     </Button>
                                 </InputGroup.Append>
@@ -111,7 +110,6 @@ export default connect(
         genres: state.mainPage.genres
     }),
     (dispatch) => ({
-        initialize: (search, genre) => dispatch(getCurrentFilms(search, genre)),
         filterFilms: (filter) => dispatch(filterFilms(filter)),
         setFilm: (film) => dispatch(setFilm(film))
     })
