@@ -3,17 +3,15 @@
 }
 
 .header {
-  position: sticky;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 0;
 
   .logo {
-      font-size: 20px;
-      letter-spacing: 0.2px;
-      text-decoration: none;
-      text-align: center;
+    display: inline-block;
+    & > img {
+      width: 70px;
+      height: 70px;
+      vertical-align: baseline;
     }
+  }
 }
 
 
