@@ -90,3 +90,4 @@ export const HALLS_DATA = [
         ]
     }
 ];
+

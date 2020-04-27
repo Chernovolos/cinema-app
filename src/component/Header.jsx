@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {withRouter} from 'react-router'
+import { withRouter } from 'react-router'
+import {Navbar} from "react-bootstrap";
+import Nav from "react-bootstrap/Nav";
+import logo from "../assets/images/logo.png"
 
 
 class Header extends React.Component {
@@ -11,20 +14,32 @@ class Header extends React.Component {
             <div className="header-container">
                 <div className="container">
                     <header className="header">
-                        <div>
-                            <Link to="/" className="logo">Logo</Link>
-                        </div>
-                        <nav className="nav nav-list">
-                            <Link to="/" data-name="Home"
-                                  className={`nav-item ${location.pathname === "/"? "is-active": ""}`}>
-                                Home
-                            </Link>
-                            <Link to="/schedule"
-                                  data-name="Movie Schedule"
-                                  className={`nav-item ${location.pathname === "/schedule"? "is-active": ""}`}>
-                                Movie Schedule
-                            </Link>
-                        </nav>
+                        <Navbar collapseOnSelect expand="lg p-0">
+                            <Navbar.Brand>
+                                <Link to="/" className="logo">
+                                  <img src={logo} className="logo"/>
+                                </Link>
+                            </Navbar.Brand>
+                            <Navbar.Toggle aria-controls="nav-toggle responsive-navbar-nav" />
+                            <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
+                                <Nav>
+                                    <Nav.Item className="nav-list ">
+                                        <Link to="/"
+                                              data-name="Home"
+                                              className={`nav-item ${location.pathname === "/"? "is-active": ""}`}>
+                                            Главная
+                                        </Link>
+                                    </Nav.Item>
+                                    <Nav.Item className="nav-list">
+                                        <Link to="/schedule"
+                                              data-name="Movie Schedule"
+                                              className={`nav-item ${location.pathname === "/schedule"? "is-active": ""}`}>
+                                            Расписание
+                                        </Link>
+                                    </Nav.Item>
+                                </Nav>
+                            </Navbar.Collapse>
+                        </Navbar>
                     </header>
                 </div>
             </div>

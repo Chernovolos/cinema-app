@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 import { connect } from "react-redux";
 import HallComponent from "./HallComponent";
-import {Col, Row} from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import TicketForm from "./TicketForm";
 import film from "../models/film";
 import { buyTicket } from "../actions/ticketActions";
@@ -35,13 +35,18 @@ class TicketPage extends React.Component {
             <div className="section section-hall">
                 <div className="container">
                     <Row>
-                        <Col sm={12} md={12} xl={9}>
-                            <HallComponent hall={filmHall} onSelectPlace={this.handleSelectPlaces}/>
-                            <Preloader show={preloader}/>
-                        </Col>
-                        <Col xs={12} sm={7} md={6} xl={3}>
-                            <TicketForm onSubmit={this.handleBuyTickets} isBtnDisabled={!places.length}/>
-                        </Col>
+                        {
+                            preloader ?
+                                <Preloader show={preloader}/> :
+                                <>
+                                    <Col sm={12} md={12} xl={9}>
+                                        <HallComponent hall={filmHall} onSelectPlace={this.handleSelectPlaces}/>
+                                    </Col>
+                                    <Col xs={12} sm={7} md={6} xl={3}>
+                                        <TicketForm onSubmit={this.handleBuyTickets} isBtnDisabled={!places.length}/>
+                                    </Col>
+                                </>
+                        }
                     </Row>
                 </div>
                 <ModalTicket show={isTicketBought} serverAnswer={serverAnswer} onClose={this.onClose}/>
