@@ -1,13 +1,13 @@
 import React from "react";
-// import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-// import { faCoffee} from "@fortawesome/free-solid-svg-icons";
 
 export default ({show}) => {
 
     return (
         show ?
-            <div>
-               <h1>LOADING...LOADING</h1>
+            <div className="preloader-wrapper">
+                <div className="preloader-container">
+                    <h2 className="animate">Loading</h2>
+                </div>
             </div>:
             null
     );
