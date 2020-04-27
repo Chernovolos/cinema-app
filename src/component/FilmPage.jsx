@@ -1,9 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
-import {Col, Row} from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import Preloader from "./Preloader";
 import Image from "./Image";
-import {clearTicketPage} from "../actions/ticketActions";
+import { clearTicketPage } from "../actions/ticketActions";
+
 
 class FilmPage extends React.Component {
 
@@ -26,13 +27,13 @@ class FilmPage extends React.Component {
             <section className="section section-film-page">
                 <div className="container">
                     {
-                        loading?
+                        loading ?
                             <Row>
                                 <Preloader show={loading}/>
                             </Row> :
                             <>
                                 <Row>
-                                    <Col sm={12} md={4} xl={3}>
+                                    <Col sm={12} md={4} xl={3} className="pb-3">
                                         <div className="film-page-img">
                                             <Image src={film.poster}/>
                                         </div>
@@ -73,12 +74,12 @@ class FilmPage extends React.Component {
                                             <p className={`film-page-description ${film.age.length ? "": "d-none"}`}><span className="film-page-subtitle">Возраст:</span> {film.age}</p>
                                         </div>
                                         <div>
-                                            <button onClick={this.handleBuyTicket} className=" my-btn film-page-btn">Buy Ticket</button>
+                                            <button onClick={this.handleBuyTicket} className=" my-btn film-page-btn">Купить билет</button>
                                         </div>
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Col sm={8} className="mt-3">
+                                    <Col sm={8} md={8} xl={8} className="mt-3">
                                         <div className="film-page-video">
                                             <iframe width="560" height="315"
                                                     src={film.trailer} frameBorder="0"
