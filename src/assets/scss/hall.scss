@@ -1,0 +1,288 @@
+.hall-container {
+  padding: 10px 0;
+  border-radius: 5px;
+  background-color: $dark-color;
+}
+
+.hall-title {
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
+  color: $yellow-color;
+  text-transform: uppercase;
+}
+
+.place {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $silver-white-color;
+  font-size: 13px;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow:  0 0 4px $silver-white-color;
+  }
+
+}
+
+.place-free {
+  background-color: $light-blue-color;
+}
+
+.place-chosen {
+  cursor: default;
+  background-color: $light-green-color;
+
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.place-hidden {
+  color: transparent;
+  cursor: default;
+
+  &:disabled {
+    background-color: transparent;
+  }
+
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.place-reserved {
+  cursor: default;
+  background-color: $red-color;
+
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.place-screen-wrapper {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+  padding-left: 15px;
+}
+
+.hall-container-screen {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5px;
+}
+
+.hall-screen {
+  height: 10px;
+  width: 540px;
+  background-color: $yellow-color;
+  border-radius: 168px 149px 44px 50px / 75px 75px 26px 24px;
+  margin-left: 15px;
+}
+
+
+.hall-place-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.place-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .place-row-number {
+    color: $grey-color;
+    font-size: 10px;
+    font-weight: bold;
+    background-color: $yellow-color;
+    border-radius: 10px;
+    padding: 2px 6px;
+
+  }
+}
+
+.hall-container-description {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: $dark-color;
+  border-radius: 5px;
+
+  .place-wrapper-description {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    letter-spacing: .5px;
+    color: $silver-white-color;
+    text-transform: uppercase;
+  }
+
+  .place-description {
+    height: 20px;
+    width: 20px;
+    border-radius: 5px;
+    margin: 10px;
+  }
+
+  .place {
+    font-size: 12px;
+    width: 300px;
+    height: 30px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+
+  }
+}
+
+/*MEDIA*/
+@media (min-width: 320px) and (max-width: 375px){
+  .place {
+    justify-content: center;
+    font-size: 7px;
+    width: 20px;
+    height: 20px;
+    margin: 3px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 2px;
+  }
+
+  .hall-container-description {
+    flex-direction: column;
+
+    .place-wrapper-description {
+      font-size: 9px;
+    }
+  }
+
+  .hall-screen {
+    width: 225px;
+    height: 6px;
+
+  }
+
+  .place-row {
+    .place-row-number {
+      font-size:7px;
+      padding: 2px 5px;
+    }
+  }
+}
+
+@media (min-width: 375px) and (max-width: 585px) {
+
+  .place {
+    justify-content: center;
+    font-size: 8px;
+    width: 22px;
+    height: 22px;
+    margin: 3px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .hall-container-description {
+    flex-direction: column;
+
+    .place-wrapper-description {
+      font-size: 10px;
+    }
+  }
+
+  .hall-screen {
+    width: 245px;
+    height: 8px;
+  }
+
+  .place-row {
+    .place-row-number {
+      font-size: 8px;
+      padding: 2px 6px;
+    }
+  }
+}
+
+@media (min-width: 585px) and (max-width: 640px) {
+  .place {
+    justify-content: center;
+    font-size: 10px;
+    width: 30px;
+    height: 30px;
+    margin: 4px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .place-row-number {
+    font-size: 8px;
+    font-weight: bold;
+    border-radius: 10px;
+  }
+
+  .place-screen-wrapper {
+    display: flex;
+  }
+
+  .hall-screen {
+    width: 340px;
+    height: 8px;
+  }
+
+  .hall-container-description {
+    flex-direction: column;
+
+    .place-wrapper-description {
+      font-size: 10px;
+    }
+  }
+
+  .place-row {
+    .place-row-number {
+      font-size: 8px;
+      padding: 2px 6px;
+    }
+  }
+
+}
+
+@media (min-width: 640px) and (max-width: 768px) {
+  .place {
+    font-size: 10px;
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .hall-screen {
+    width: 400px;
+    height: 10px;
+  }
+
+  .hall-container-description {
+    flex-direction: row;
+  }
+
+  .place-wrapper-description  {
+    font-size: 10px;
+  }
+
+  .place-row {
+    .place-row-number {
+      font-size: 8px;
+      padding: 2px 6px;
+    }
+  }
+}
+

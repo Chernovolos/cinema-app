@@ -1,0 +1,114 @@
+/* Colors */
+$dark-color: #1d1e22;
+$dark-color-opacity: rgba(28, 29, 33, 0.61);
+$grey-color: #393f4d;
+$silver-white-color: #d4d4dc;
+$yellow-color: #feda6a;
+$dark-yellow: #dfa801;
+$dark-grey-color: #333333;
+$light-blue-color: rgba(26, 255, 232, 0.56);
+$light-green-color: #2E8B57;
+$red-color: rgba(255, 26, 26, 0.56);
+
+
+/*BASE*/
+$base-color: #d4d4dc;
+$base-background-color: $dark-grey-color;
+
+/*HEADER*/
+$header-header-container-bgc: $dark-color;
+
+/*NAV*/
+$nav-nav-item-color: $yellow-color;
+$nav-nav-item-after-bgc: $yellow-color;
+$nav-nav-item-after-hover-bgc: $dark-grey-color;
+$nav-nav-item-after-before-hover-bgc: $silver-white-color;
+$nav-nav-item-after-before-hover-color: $silver-white-color;
+$nav-is-active-bgc: $yellow-color;
+$navbar-toggler-bgc: $yellow-color;
+$navbar-toggler-border-color: $dark-grey-color;
+
+/*SECTION*/
+$section-film-page-bgc: $dark-grey-color;
+$section-section-hall-bgc: $dark-grey-color;
+
+/*FILM-CARD*/
+$film-card-color: $yellow-color;
+$film-card-bg: $dark-color;
+$film-card--hover-bgc: $dark-color;
+$film-card-bg-card: $dark-color;
+$film-card-overlay-bgc: $dark-color-opacity;
+$film-card-title-hover: $silver-white-color;
+
+/*FILM-PAGE*/
+$film-page-title-color:  $yellow-color;
+$film-page-subtitle-color: $yellow-color;
+$film-page-description-color:  $silver-white-color;
+
+/*HALL*/
+$hall-place-color: #d4d4dc;
+$hall-place-free-bgc: $light-blue-color;
+$hall-place-chosen-bgc: $light-green-color;
+$hall-place-hidden-bgc: transparent;
+$hall-place-reserved-bgc: $red-color;
+$hall-place-screen-bgc: $yellow-color;
+$hall-place-row-number-bgc: $yellow-color;
+$hall-place-row-number-color: $grey-color;
+$hall-place-wrapper-description-color: $silver-white-color;
+
+//MODAL-TICKET
+$ticket-modal-container-bgc: $dark-grey-color;
+$ticket-modal-title-greeting-color: $yellow-color;
+$ticket-modal-subtitle-greeting-color: $silver-white-color;
+$ticket-modal-title-color: $silver-white-color;
+$ticket-modal-subtitle-color: $yellow-color;
+$ticket-modal-info-title-color: $silver-white-color;
+$ticket-modal-info-subtitle-color: $yellow-color;
+$ticket-modal-place-title-color: $silver-white-color;
+$ticket-modal-place-subtitle-color: $yellow-color;
+$ticket-modal-description-container-color: $yellow-color;
+$ticket-modal-description-container-border: $yellow-color;
+$ticket-modal-border-total-cost: $dark-color-opacity;
+$ticket-modal-border-total-cost-hover: $yellow-color;
+$ticket-modal-title-total-cost-color: $silver-white-color;
+$ticket-modal-total-cost-color: $yellow-color;
+
+//TICKET-FORM
+$ticket-form-container-bgc: $dark-color;
+$ticket-form-error-color: $red-color;
+$ticket-input-color: $silver-white-color;
+$ticket-input-outline-color: $yellow-color;
+$ticket-input-border-color: $silver-white-color;
+
+//SCHEDULE PAGE
+$main-search-input-group-color: $silver-white-color;
+$main-search-options-color: $silver-white-color;
+$main-search-options-border-color: $dark-color;
+
+//PRELOADER
+$preloader-wrapper-bgc: $dark-grey-color;
+
+//CINEMA DAY
+$cinema-day-title-color: $silver-white-color;
+
+
+
+/*Button*/
+$button-film-page-color: $yellow-color;
+$button-film-page-hover-bgc: $yellow-color;
+$button-film-page-hover-color: $dark-color;
+$button-film-page-hover-border-color: $dark-color;
+
+$ticket-form-btn-color: $yellow-color;
+$ticket-form-border-color: $yellow-color;
+$ticket-form-btn-hover-color: $dark-color;
+$ticket-form-bgc-hover-color: $yellow-color;
+$ticket-form-border-hover-color: $dark-color;
+$ticket-form-border-focus-color: $dark-yellow;
+
+$ticket-modal-button-color: $yellow-color;
+$ticket-modal-button-border-color: $yellow-color;
+$ticket-modal-button-hover-color: $dark-color;
+$ticket-modal-button-hover-bgc: $yellow-color;
+$ticket-modal-button-border-hover-bgc: $dark-color;
+

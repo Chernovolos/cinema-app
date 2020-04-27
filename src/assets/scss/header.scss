@@ -1,0 +1,17 @@
+.header-container {
+  background-color: $dark-color;
+}
+
+.header {
+
+  .logo {
+    display: inline-block;
+    & > img {
+      width: 70px;
+      height: 70px;
+      vertical-align: baseline;
+    }
+  }
+}
+
+

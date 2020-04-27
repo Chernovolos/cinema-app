@@ -1,0 +1,22 @@
+// outsource
+@import "~bootstrap/scss/bootstrap";
+
+@import "../fonts/index";
+// TODO 04.02.2020  implement variables (colors, font-sizes...)
+@import "variables";
+// TODO 04.02.2020  implement base styling (fonts, sizes, colors, base overriding, paddings, margins...)
+@import "base";
+
+// components
+@import "film-card";
+@import "header";
+@import "nav";
+@import "section";
+@import "ticket-form";
+@import "film-page";
+@import "button";
+@import "hall";
+@import "ticket-modal";
+@import "main-page-search";
+@import "cinema-day";
+@import "preloader";

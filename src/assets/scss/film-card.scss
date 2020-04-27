@@ -1,0 +1,70 @@
+.card-film {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  background-color: $dark-color;
+  background-position: center;
+  background-size: cover;
+
+  .card-title {
+    color: $yellow-color;
+    font-size: 15px;
+    letter-spacing: 0.2px;
+    text-transform: capitalize;
+    padding: 0 5px;
+    margin-bottom: 0;
+    cursor: pointer;
+
+      &:hover {
+        color: $silver-white-color;
+      }
+  }
+
+  & .card-description {
+    color: $yellow-color;
+    font-size: 15px;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  .genre-badge, .session-badge {
+    color: $yellow-color;
+    font-size: 12px;
+    font-weight: lighter;
+    text-transform: uppercase;
+    border:1px solid $yellow-color;
+    background-color: transparent;
+    margin: 10px 5px;
+    cursor: pointer;
+
+    &:hover {
+      color: $yellow-color;
+      box-shadow:  0 0 10px $yellow-color;
+      background-color: $dark-color;
+    }
+  }
+
+  .genre-badge {
+    font-size: 10px;
+  }
+
+  .card-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $dark-color-opacity;
+    padding-top: 200px;
+  }
+
+  .card-film-img {
+     img {
+       width: 100%;
+       height: 400px;
+       object-fit: cover;
+      }
+  }
+}

@@ -1,0 +1,116 @@
+.ticket-modal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $dark-grey-color;
+  border-radius: 5px;
+  padding: 15px 20px;
+
+  .ticket-modal-title-greeting {
+    font-size: 14px;
+    color: $yellow-color;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    .ticket-modal-subtitle-greeting {
+      color: $silver-white-color;
+    }
+  }
+
+  .ticket-modal-title {
+    font-size: 14px;
+    color: $silver-white-color;
+    letter-spacing: 0.5px;
+    padding-top: 10px;
+    margin: 0;
+  }
+
+  .ticket-modal-subtitle {
+    color: $yellow-color;
+    font-size: 14px;
+    font-weight: 300;
+  }
+}
+
+.ticket-modal-info-title {
+  font-size: 12px;
+  color: $silver-white-color;
+  letter-spacing: 0.5px;
+  padding-top: 10px;
+  margin: 0;
+
+  .ticket-modal-info-subtitle {
+    color: $yellow-color;
+    font-size: 12px;
+    font-weight: 300;
+  }
+}
+
+.ticket-modal-container-place {
+  padding: 10px 0;
+
+  .ticket-modal-place-title {
+    color: $silver-white-color;
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0;
+  }
+  .ticket-modal-place-subtitle {
+    color: $yellow-color;
+  }
+}
+
+.ticket-modal-description-container {
+  display: flex;
+  color: $yellow-color;
+  width: 150px;
+  outline-color: transparent;
+  border: 1px solid $yellow-color;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 10px 0;
+}
+
+.ticket-modal-container-button {
+  display: flex;
+  align-self: end;
+}
+
+.ticket-modal-border-total-cost {
+  width: 100%;
+  height: 1px;
+  margin-bottom: 5px;
+  background-color: $dark-color-opacity;
+
+  &:hover {
+    background-color: $yellow-color;
+  }
+}
+
+.ticket-modal-wrapper-total-cost {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+
+  .ticket-modal-container-total-cost {
+
+    .ticket-modal-title-total-cost {
+      font-size: 14px;
+      color: $silver-white-color;
+      letter-spacing: 0.5px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .ticket-modal-total-cost {
+      color: $yellow-color;
+      font-size: 14px;
+      font-weight: 300;
+      margin: 0;
+    }
+  }
+}
+
+.modal-content {
+  border: none;
+}

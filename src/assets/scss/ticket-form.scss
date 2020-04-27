@@ -1,0 +1,32 @@
+.ticket-form-container {
+  border-radius: 5px;
+  background-color: $dark-color;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+.ticket-form-control {
+  padding: 10px 5px;
+}
+
+.ticket-form-error {
+  color: $red-color;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.ticket-input {
+  font-size: 12px;
+  font-weight: 400;
+  color: $silver-white-color;
+  outline-color: $yellow-color;
+  outline-width: 2px;
+  width: 100%;
+  background-color: transparent !important;
+  border-bottom: 1px solid $silver-white-color;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  padding: 10px 10px;
+}
+
