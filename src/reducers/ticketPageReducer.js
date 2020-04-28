@@ -14,18 +14,15 @@ export default (state = initialState, action) => {
     switch (type) {
 
         case ACTION.CLEAR_TICKET_PAGE:
-            console.log("CLEAR_TICKET_PAGE", 'font-size: 18px; color: green', ACTION.CLEAR_TICKET_PAGE);
             return initialState;
 
         case ACTION.BUY_TICKET_START:
-            console.log('%c BUY_TICKET_START', 'font-size: 18px; color: green', ACTION.BUY_TICKET_START);
             return {
                 ...state,
                 preloader: true
             };
 
         case ACTION.BUY_TICKET_SUCCESS:
-            console.log('%c BUY_TICKET_SUCCESS', 'font-size: 18px; color: green', ACTION.BUY_TICKET_SUCCESS);
             return {
                 ...state,
                 serverAnswer: payload,

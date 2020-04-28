@@ -8,9 +8,7 @@ export const buyTicketError = (error) => ({type: ACTION.BUY_TICKET_ERROR, payloa
 export const buyTicket = (ticket) => (dispatch) => {
     dispatch(buyTicketStart());
         new Promise((resolve) => {
-            // dispatch(getCurrentFilmsStart());
         setTimeout(() => {
-            console.log("%cSEND ticket ORDER to the SERVER", "color:green;font-size:18px", ticket);
             resolve({
                 status: "OK",
                 data: {

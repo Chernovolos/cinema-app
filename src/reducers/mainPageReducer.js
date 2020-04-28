@@ -16,7 +16,6 @@ export default (state = initialState, action) => {
 
     switch (type) {
         case ACTION.GET_CURRENT_FILMS_SUCCESS:
-            console.log('%c FILMS FROM SERVER', 'font-size: 18px; color: green', payload);
             let shownFilms = filterFilms(payload.films, {genre: payload.genre, search: payload.search});
             return {
                 ...state,
@@ -26,7 +25,6 @@ export default (state = initialState, action) => {
                 error: null
             };
 
-        // TODO 29.03.2020 add error handling
         case ACTION.GET_CURRENT_FILMS_ERROR:
             return {
                 ...state,

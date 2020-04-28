@@ -30,6 +30,7 @@ export default (state = initialState, action) => {
                 cinemaDays.push(new CinemaDay(cinemaDayDate, cinemaDayFilms));
             }
             return {...state, cinemaDays};
+
+        default: return state;
     }
-    return state;
 }
