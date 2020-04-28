@@ -9,6 +9,10 @@
   border-color: transparent;
 }
 
+.input-group-append {
+  z-index: -5;
+}
+
 @media (min-width: 320px) and  (max-width: 585px) {
   .main-search-input-group {
     font-size: 14px;
