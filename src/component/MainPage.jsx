@@ -24,7 +24,6 @@ class MainPage extends React.Component {
     }
 
     handleGenreChange = (event) => {
-        console.log("GENRE SELECTED: ", event.target.value);
         this.setState({...this.state, genre: event.target.value});
     };
 
@@ -76,7 +75,7 @@ class MainPage extends React.Component {
                                 <FormControl  className="main-search-input-group bg-transparent outline-secondary" placeholder="Введите название фильма" value={search} onChange={this.handleSearchChange}/>
                                 <InputGroup.Append>
                                     <Button onClick={this.handleSearch} variant={"secondary"}>
-                                        <FontAwesomeIcon icon={faSearch}/>
+                                        <FontAwesomeIcon icon={faSearch} className="main-search-icon"/>
                                     </Button>
                                 </InputGroup.Append>
                             </InputGroup>
