@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
@@ -17,9 +18,27 @@ const Footer = () => {
                     <Col md={4}>
                         <h5>Quick Links</h5>
                         <ul className="list-unstyled">
-                            <li><a href="/about" className="text-white">About</a></li>
-                            <li><a href="/contact" className="text-white">Contact</a></li>
-                            <li><a href="/privacy" className="text-white">Privacy Policy</a></li>
+                            <Link
+                                to={`/about`}
+                                className="card-title"
+                                onClick={handleFilmType}
+                            >
+                                <h5>About</h5>
+                            </Link>
+                            <Link
+                                to={`/contact`}
+                                className="card-title"
+                                onClick={handleFilmType}
+                            >
+                                <h5>Contact</h5>
+                            </Link>
+                            <Link
+                                to={`/privacy`}
+                                className="card-title"
+                                onClick={handleFilmType}
+                            >
+                                <h5>Privacy Policy</h5>
+                            </Link>
                         </ul>
                     </Col>
                     <Col md={4}>
