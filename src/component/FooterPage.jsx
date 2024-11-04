@@ -21,21 +21,18 @@ const Footer = () => {
                             <Link
                                 to={`/about`}
                                 className="card-title"
-                                onClick={handleFilmType}
                             >
                                 <h5>About</h5>
                             </Link>
                             <Link
                                 to={`/contact`}
                                 className="card-title"
-                                onClick={handleFilmType}
                             >
                                 <h5>Contact</h5>
                             </Link>
                             <Link
                                 to={`/privacy`}
                                 className="card-title"
-                                onClick={handleFilmType}
                             >
                                 <h5>Privacy Policy</h5>
                             </Link>
