@@ -1,10 +1,20 @@
+@use "variables";
 
 body {
   font-family: "Raleway", serif;
-  color: $white;
-  background-color: $base-background-color;
+  color: variables.$silver-white-color;
+  background-color: variables.$base-background-color;
 }
 
 h1,h2,h3,h4,h5,h6,p,a {
   font-family: "Raleway", serif;
+}
+
+.p-t {
+  padding-top: 30px;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
 }

@@ -1,6 +1,7 @@
 import React from "react";
-import {PLACE_STATUS} from "../models/place";
 import some from "lodash/some";
+
+import { PLACE_STATUS } from "../models/place";
 
 class HallComponent extends React.Component {
     state = {
@@ -45,7 +46,7 @@ class HallComponent extends React.Component {
                         return (
                             <div key={id} className="hall-place-wrapper">
                                 <div className="place-row">
-                                    <span className="place-row-number">{number}</span>
+                                    <span className="place-row-number">{ number }</span>
                                 </div>
                                 {
                                     places.map((place) => {
@@ -80,15 +81,15 @@ class HallComponent extends React.Component {
                 <div className="hall-container-description">
                     <div className="place-wrapper-description">
                         <div className="place-description place-reserved"/>
-                        <span>зарезервированное место</span>
+                        <span>reserved seat</span>
                     </div>
                     <div className="place-wrapper-description">
                         <div className="place-description place-chosen"/>
-                        <span>выбранное место</span>
+                        <span>selected place</span>
                     </div>
                     <div className="place-wrapper-description">
                         <div className="place-description place-free"/>
-                        <span>свободное место</span>
+                        <span>free space</span>
                     </div>
                 </div>
             </div>

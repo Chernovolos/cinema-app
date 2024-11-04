@@ -1,3 +1,5 @@
+@use "variables";
+
 .film-page-wrapper {
   display: flex;
   flex-direction: column;
@@ -5,19 +7,19 @@
 }
 
 .film-page-title {
-  color: $yellow-color;
+  color: variables.$yellow-color;
   text-transform: uppercase;
   font-weight: 300;
 }
 
 .film-page-subtitle {
-  color: $yellow-color;
+  color: variables.$yellow-color;
   text-transform: uppercase;
   font-weight: 400;
 }
 
 .film-page-description {
-  color: $silver-white-color;
+  color: variables.$silver-white-color;
   font-size: 14px;
   font-weight: 400;
   text-align: left;

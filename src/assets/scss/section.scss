@@ -1,12 +1,71 @@
+@use "variables";
+
 .section {
   position: relative;
   padding: 30px 0;
 }
 
 .section-film-page {
-  background-color: $dark-grey-color;
+  background-color: variables.$dark-grey-color;
 }
 
 .section-hall {
-  background-color: $dark-grey-color;
+  background-color: variables.$dark-grey-color;
+}
+
+.section-main-page {
+  padding: 0;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.orange-line {
+  width: 4px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: #FFA726;
+}
+
+.header-text {
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #cccccc;
+}
+
+footer .social-icon {
+  margin-right: 15px;
 }

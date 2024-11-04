@@ -1,42 +1,33 @@
-import React from "react";
-import { Switch, Route } from "react-router";
-import { connect } from "react-redux";
-import MainPage from "./MainPage";
-import Header from "./Header";
-import FilmPage from "./FilmPage";
-import TicketPage from "./TicketPage";
-import SchedulePage from "./SchedulePage";
+import React, { useEffect } from "react";
+import { Outlet } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
+import Header from "./Header.jsx";
 import Preloader from "./Preloader";
-import { getCurrentFilms } from "../actions/filmActions";
+import Footer from "./FooterPage.jsx";
+import ScrollToTopButton from "./ScrollToTopButton.jsx";
 
-class Layout extends React.Component {
+import { getCurrentFilms } from "../actions/filmsActions";
+import { getUpcomingFilms } from "../actions/filmsUpcoming.js";
 
-    componentDidMount() {
-        this.props.initialize();
-    }
+const Layout = () => {
+    const dispatch = useDispatch();
+    const preloader = useSelector(state => state.films.preloader);
+    useEffect(() => {
+        dispatch(getCurrentFilms({}));
+        dispatch(getUpcomingFilms({}));
+    }, [dispatch]);
 
-    render() {
-        const { preloader } = this.props;
-        return (
-            <>
-                <Header/>
-                <Preloader show={preloader}/>
-                <Switch>
-                    <Route exact path="/" component={MainPage}/>
-                    <Route path="/films/:id" component={FilmPage}/>
-                    <Route path="/buy-tickets" component={TicketPage}/>
-                    <Route path="/schedule" component={SchedulePage}/>
-                </Switch>
-            </>
-        );
-    }
-}
+    return (
+        <>
+            <Header />
+            <Preloader show={preloader} />
+            <ScrollToTopButton />
+            <Outlet />
+            <Footer />
 
-export default connect(
-    state => ({
-        preloader: state.app.preloader,
-    }),
-    dispatch => ({
-        initialize: () => dispatch(getCurrentFilms())
-    })
-)(Layout);
+        </>
+    );
+};
+
+export default Layout;

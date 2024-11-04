@@ -1,17 +1,19 @@
+@use "variables";
+
 .main-search-input-group {
   font-size: 16px;
-  color: $silver-white-color;
+  color: variables.$silver-white-color;
 }
 
 .main-search-options {
-  color: $silver-white-color;
-  background-color: $dark-color;
+  color: variables.$silver-white-color;
+  background-color: variables.$dark-color;
   border-color: transparent;
 }
 
 @media (min-width: 320px) and  (max-width: 585px) {
   .main-search-input-group {
     font-size: 14px;
-    color: $silver-white-color;
+    color: variables.$silver-white-color;
   }
 }

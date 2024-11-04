@@ -1,4 +1,3 @@
-
 export  default class Place {
     constructor(place) {
         this.id = place.id;

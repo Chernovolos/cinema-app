@@ -1,45 +1,42 @@
-import * as ACTION from "../actions/types";
-import {HALLS_DATA} from "../models/mocks";
+import { createSlice } from '@reduxjs/toolkit';
+import { HALLS_DATA } from '../models/mocks';
+import { buyTicket } from "../actions/ticketActions.js";
 
 const initialState = {
     preloader: false,
     hall: HALLS_DATA[0],
     error: null,
     isTicketBought: false,
-    serverAnswer: null
+    serverAnswer: null,
 };
 
-export default (state = initialState, action) => {
-    let {type, payload} = action;
-    switch (type) {
+// Slice
+const ticketSlice = createSlice({
+    name: 'ticket',
+    initialState,
+    reducers: {
+        clearTicketPage: () => initialState,
+    },
+    extraReducers: (builder) => {
+        builder
+            .addCase(buyTicket.pending, (state) => {
+                state.preloader = true;
+                state.error = null;
+            })
+            .addCase(buyTicket.fulfilled, (state, action) => {
+                state.preloader = false;
+                state.serverAnswer = action.payload;
+                state.isTicketBought = true;
+            })
+            .addCase(buyTicket.rejected, (state, action) => {
+                state.preloader = false;
+                state.error = action.payload;
+            });
+    },
+});
 
-        case ACTION.CLEAR_TICKET_PAGE:
-            return initialState;
+export const { clearTicketPage } = ticketSlice.actions;
+export default ticketSlice.reducer;
 
-        case ACTION.BUY_TICKET_START:
-            return {
-                ...state,
-                preloader: true
-            };
-
-        case ACTION.BUY_TICKET_SUCCESS:
-            return {
-                ...state,
-                serverAnswer: payload,
-                preloader: false,
-                error: null,
-                isTicketBought: true
-            };
-
-        case ACTION.BUY_TICKET_ERROR:
-            return {
-                ...state,
-                preloader: true,
-                error: payload,
-            };
-        }
-
-    return state;
-}
 
 

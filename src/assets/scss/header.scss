@@ -1,9 +1,17 @@
+@use "variables";
+
 .header-container {
-  background-color: $dark-color;
+  background-color: variables.$dark-color;
+  padding-bottom: 85px;
+  margin-bottom: 10px;
 }
 
 .header {
+  background-color: variables.$dark-color;
 
+  nav {
+    background-color: variables.$dark-color;
+  }
   .logo {
     display: inline-block;
     & > img {

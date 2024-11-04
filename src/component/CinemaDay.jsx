@@ -3,7 +3,6 @@ import {Col, Row} from "react-bootstrap";
 import FilmCard from "./FilmCard";
 
 let CinemaDay = ({dateTitle, films, onFilmClick}) => {
-
     return (
         <>
             <Row>

@@ -1,3 +1,5 @@
+@use "variables";
+
 .nav {
 
 }
@@ -11,7 +13,7 @@
 
 
   .nav-item {
-    color: $yellow-color;
+    color: variables.$yellow-color;
     font-size: 15px;
     text-align: center;
     text-decoration: none;
@@ -28,7 +30,7 @@
         height: 1px;
         font-size: 15px;
         font-weight: 400;
-        background-color: $yellow-color;
+        background-color: variables.$yellow-color;
       }
     }
   }
@@ -39,23 +41,23 @@
       content: "";
       width: 0;
       height: 1px;
-      background-color: $yellow-color;
+      background-color: variables.$yellow-color;
       transition: width .3s ease-in-out;
     }
 
    & .nav-item {
       &:hover:after {
         width: 100%;
-        background-color: $dark-grey-color;
+        background-color: variables.$dark-grey-color;
       }
     }
   }
 
   & .nav-item {
     &:hover {
-      color: $silver-white-color;
+      color: variables.$silver-white-color;
       &:after {
-        background-color: $silver-white-color;
+        background-color: variables.$silver-white-color;
       }
     }
   }
@@ -63,8 +65,8 @@
 
 
 .navbar-toggler {
-  background-color: $yellow-color;
-  border: 2px solid $dark-grey-color;
+  background-color: variables.$yellow-color;
+  border: 2px solid variables.$dark-grey-color;
 }
 
 .collapse.show .nav-list {

@@ -1,6 +1,8 @@
+@use "variables";
+
 .ticket-form-container {
   border-radius: 5px;
-  background-color: $dark-color;
+  background-color: variables.$dark-color;
   padding: 10px;
   margin-top: 30px;
 }
@@ -10,7 +12,7 @@
 }
 
 .ticket-form-error {
-  color: $red-color;
+  color: variables.$red-color;
   font-size: 10px;
   text-transform: uppercase;
 }
@@ -18,12 +20,12 @@
 .ticket-input {
   font-size: 12px;
   font-weight: 400;
-  color: $silver-white-color;
-  outline-color: $yellow-color;
+  color: variables.$silver-white-color;
+  outline-color: variables.$yellow-color;
   outline-width: 2px;
   width: 100%;
   background-color: transparent !important;
-  border-bottom: 1px solid $silver-white-color;
+  border-bottom: 1px solid variables.$silver-white-color;
   border-top: 0;
   border-left: 0;
   border-right: 0;

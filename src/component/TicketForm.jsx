@@ -11,7 +11,7 @@ const TicketForm = ({handleSubmit, handleChange, values, errors, touched, handle
                         id="firstName"
                         name="firstName"
                         type="text"
-                        placeholder="имя"
+                        placeholder="name"
                         className="ticket-input"
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -24,7 +24,7 @@ const TicketForm = ({handleSubmit, handleChange, values, errors, touched, handle
                         id="lastName"
                         name="lastName"
                         type="text"
-                        placeholder="фамилия"
+                        placeholder="surname"
                         className="ticket-input"
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -37,7 +37,7 @@ const TicketForm = ({handleSubmit, handleChange, values, errors, touched, handle
                         id="email"
                         name="email"
                         type="email"
-                        placeholder="эдектронная почта"
+                        placeholder="e-mail"
                         className="ticket-input"
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -50,7 +50,7 @@ const TicketForm = ({handleSubmit, handleChange, values, errors, touched, handle
                         id="phone"
                         name="phone"
                         type="phone"
-                        placeholder="номер телефона"
+                        placeholder="phone number"
                         className="ticket-input"
                         onChange={handleChange}
                         onBlur={handleBlur}
@@ -58,7 +58,7 @@ const TicketForm = ({handleSubmit, handleChange, values, errors, touched, handle
                     />
                     {errors.phone && touched.phone && <div id="feedback" className="ticket-form-error">{errors.phone}</div>}
                 </div>
-                <button type="submit" className="my-btn ticket-form-btn" disabled={!isValid || isBtnDisabled}>Отправить</button>
+                <button type="submit" className="my-btn ticket-form-btn" disabled={!isValid || isBtnDisabled}>Buy</button>
             </form>
         </div>
     );
@@ -77,18 +77,18 @@ export default withFormik({
         const errors = {};
 
         if (!values.firstName) {
-            errors.firstName = "Заполните это поле";
+            errors.firstName = "Please fill in this field";
         }
         if(!values.lastName) {
-            errors.lastName = "Заполните это поле";
+            errors.lastName = "Please fill in this field";
         }
         if (!values.email) {
-            errors.email = "Заполните это поле";
+            errors.email = "Please fill in this field";
         } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-            errors.email = "Неверный адрес электронной почты";
+            errors.email = "Invalid email address";
         }
         if (values.phone && isNaN(values.phone)) {
-            errors.phone = "Введите корректный номер телефона";
+            errors.phone = "Please enter a valid phone number";
         }
         return errors;
     },

@@ -1,14 +1,16 @@
+@use "variables";
+
 .hall-container {
   padding: 10px 0;
   border-radius: 5px;
-  background-color: $dark-color;
+  background-color: variables.$dark-color;
 }
 
 .hall-title {
   display: flex;
   justify-content: center;
   font-size: 10px;
-  color: $yellow-color;
+  color: variables.$yellow-color;
   text-transform: uppercase;
 }
 
@@ -17,7 +19,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: $silver-white-color;
+  color: variables.$silver-white-color;
   font-size: 13px;
   width: 50px;
   height: 50px;
@@ -26,18 +28,18 @@
   cursor: pointer;
 
   &:hover {
-    box-shadow:  0 0 4px $silver-white-color;
+    box-shadow:  0 0 4px variables.$silver-white-color;
   }
 
 }
 
 .place-free {
-  background-color: $light-blue-color;
+  background-color: variables.$light-blue-color;
 }
 
 .place-chosen {
   cursor: default;
-  background-color: $light-green-color;
+  background-color: variables.$light-green-color;
 
   &:hover {
     box-shadow: none;
@@ -59,7 +61,7 @@
 
 .place-reserved {
   cursor: default;
-  background-color: $red-color;
+  background-color: variables.$red-color;
 
   &:hover {
     box-shadow: none;
@@ -82,7 +84,7 @@
 .hall-screen {
   height: 10px;
   width: 540px;
-  background-color: $yellow-color;
+  background-color: variables.$yellow-color;
   border-radius: 168px 149px 44px 50px / 75px 75px 26px 24px;
   margin-left: 15px;
 }
@@ -100,10 +102,10 @@
   justify-content: center;
 
   .place-row-number {
-    color: $grey-color;
+    color: variables.$grey-color;
     font-size: 10px;
     font-weight: bold;
-    background-color: $yellow-color;
+    background-color: variables.$yellow-color;
     border-radius: 10px;
     padding: 2px 6px;
 
@@ -114,7 +116,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: $dark-color;
+  background-color: variables.$dark-color;
   border-radius: 5px;
 
   .place-wrapper-description {
@@ -122,7 +124,7 @@
     align-items: center;
     font-size: 12px;
     letter-spacing: .5px;
-    color: $silver-white-color;
+    color: variables.$silver-white-color;
     text-transform: uppercase;
   }
 

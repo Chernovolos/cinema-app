@@ -1,10 +1,6 @@
 // outsource
 @import "~bootstrap/scss/bootstrap";
-
 @import "../fonts/index";
-// TODO 04.02.2020  implement variables (colors, font-sizes...)
-@import "variables";
-// TODO 04.02.2020  implement base styling (fonts, sizes, colors, base overriding, paddings, margins...)
 @import "base";
 
 // components
@@ -20,3 +16,4 @@
 @import "main-page-search";
 @import "cinema-day";
 @import "preloader";
+@import "card";

@@ -1,8 +1,10 @@
+@use "variables";
+
 .cinema-day-title {
   font-size: 16px;
   letter-spacing: 5px;
   align-items: flex-start;
   padding-bottom: 10px;
   padding-left: 3px;
-  border-bottom: 1px solid $silver-white-color;
+  border-bottom: 1px solid variables.$silver-white-color;
 }

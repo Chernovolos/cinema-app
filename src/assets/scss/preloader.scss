@@ -1,3 +1,5 @@
+@use "variables";
+
 .preloader-wrapper {
   position: absolute;
   top: 0;
@@ -11,7 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $dark-grey-color;
+  background-color: variables.$dark-grey-color;
 }
 
 @keyframes load {
@@ -44,7 +46,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $dark-grey-color;
+    background-color: variables.$dark-grey-color;
   }
 
 }

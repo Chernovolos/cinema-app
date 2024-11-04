@@ -3,7 +3,7 @@ import {PLACE_STATUS} from "./place";
 export const HALLS_DATA = [
     {
         id: 1,
-        name: "Желтый зал",
+        name: "Yellow Hall",
         rows: [
             {
                 id: 1,
